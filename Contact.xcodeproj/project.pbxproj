@@ -21,6 +21,7 @@
 		6D4E60791884534600132FB0 /* ContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E60781884534600132FB0 /* ContactTests.m */; };
 		6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */; };
 		6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */; };
+		6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6088188467FE00132FB0 /* EDENContactModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		6D4E6082188456F500132FB0 /* EDENFormContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENFormContactViewController.h; sourceTree = "<group>"; };
 		6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENFormContactViewController.m; sourceTree = "<group>"; };
 		6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDENFormContactViewController.xib; sourceTree = "<group>"; };
+		6D4E6087188467FE00132FB0 /* EDENContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactModel.h; sourceTree = "<group>"; };
+		6D4E6088188467FE00132FB0 /* EDENContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				6D4E6082188456F500132FB0 /* EDENFormContactViewController.h */,
 				6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */,
 				6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */,
+				6D4E6087188467FE00132FB0 /* EDENContactModel.h */,
+				6D4E6088188467FE00132FB0 /* EDENContactModel.m */,
 				6D4E60651884534600132FB0 /* Images.xcassets */,
 				6D4E605A1884534600132FB0 /* Supporting Files */,
 			);
@@ -251,6 +256,7 @@
 			files = (
 				6D4E60641884534600132FB0 /* EDENAppDelegate.m in Sources */,
 				6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */,
+				6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */,
 				6D4E60601884534600132FB0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "EDENFormContactViewController.h"
+#import "EDENContactModel.h"
 
 @interface EDENFormContactViewController ()
 
@@ -33,6 +34,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)getFormData:(id)sender {
+    EDENContactModel * contact = [[EDENContactModel alloc] init];
+    
+    contact.name    = self.name.text;
+    contact.email   = self.email.text;
+    contact.phone   = self.phone.text;
+    contact.address = self.address.text;
+    contact.site    = self.site.text;
+    
+    NSLog(@"Contact added: %@", contact.name);
 }
 
 @end

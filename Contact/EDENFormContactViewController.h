@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface EDENFormContactViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *phone;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *address;
+@property (weak, nonatomic) IBOutlet UITextField *site;
 
+- (IBAction)getFormData:(id)sender;
 @end

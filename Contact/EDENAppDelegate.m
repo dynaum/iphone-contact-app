@@ -7,15 +7,20 @@
 //
 
 #import "EDENAppDelegate.h"
+#import "EDENFormContactViewController.h"
 
 @implementation EDENAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
+    EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
+    
+    self.window.rootViewController = form;
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
