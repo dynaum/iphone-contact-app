@@ -19,6 +19,8 @@
 		6D4E606F1884534600132FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4E60571884534600132FB0 /* UIKit.framework */; };
 		6D4E60771884534600132FB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D4E60751884534600132FB0 /* InfoPlist.strings */; };
 		6D4E60791884534600132FB0 /* ContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E60781884534600132FB0 /* ContactTests.m */; };
+		6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */; };
+		6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		6D4E60741884534600132FB0 /* ContactTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ContactTests-Info.plist"; sourceTree = "<group>"; };
 		6D4E60761884534600132FB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D4E60781884534600132FB0 /* ContactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactTests.m; sourceTree = "<group>"; };
+		6D4E6082188456F500132FB0 /* EDENFormContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENFormContactViewController.h; sourceTree = "<group>"; };
+		6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENFormContactViewController.m; sourceTree = "<group>"; };
+		6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDENFormContactViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				6D4E60621884534600132FB0 /* EDENAppDelegate.h */,
 				6D4E60631884534600132FB0 /* EDENAppDelegate.m */,
+				6D4E6082188456F500132FB0 /* EDENFormContactViewController.h */,
+				6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */,
+				6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */,
 				6D4E60651884534600132FB0 /* Images.xcassets */,
 				6D4E605A1884534600132FB0 /* Supporting Files */,
 			);
@@ -221,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D4E605E1884534600132FB0 /* InfoPlist.strings in Resources */,
+				6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */,
 				6D4E60661884534600132FB0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D4E60641884534600132FB0 /* EDENAppDelegate.m in Sources */,
+				6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */,
 				6D4E60601884534600132FB0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
