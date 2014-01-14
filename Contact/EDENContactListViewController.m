@@ -46,7 +46,6 @@ static NSString *const PoolName = @"contactsPool";
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     EDENContactModel * item = [self.contacts objectAtIndex:indexPath.row];
     UITableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:PoolName];
     

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EDENContactModel : NSObject
+@interface EDENContactModel : NSObject <NSCoding>
 
 @property (strong, atomic) NSString * name;
 @property (strong, atomic) NSString * email;
