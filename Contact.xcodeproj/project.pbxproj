@@ -22,6 +22,7 @@
 		6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */; };
 		6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */; };
 		6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6088188467FE00132FB0 /* EDENContactModel.m */; };
+		6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDENFormContactViewController.xib; sourceTree = "<group>"; };
 		6D4E6087188467FE00132FB0 /* EDENContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactModel.h; sourceTree = "<group>"; };
 		6D4E6088188467FE00132FB0 /* EDENContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactModel.m; sourceTree = "<group>"; };
+		6D4E608A18856BD600132FB0 /* EDENContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactListViewController.h; sourceTree = "<group>"; };
+		6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				6D4E60631884534600132FB0 /* EDENAppDelegate.m */,
 				6D4E6082188456F500132FB0 /* EDENFormContactViewController.h */,
 				6D4E6083188456F500132FB0 /* EDENFormContactViewController.m */,
+				6D4E608A18856BD600132FB0 /* EDENContactListViewController.h */,
+				6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */,
 				6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */,
 				6D4E6087188467FE00132FB0 /* EDENContactModel.h */,
 				6D4E6088188467FE00132FB0 /* EDENContactModel.m */,
@@ -258,6 +263,7 @@
 				6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */,
 				6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */,
 				6D4E60601884534600132FB0 /* main.m in Sources */,
+				6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +464,7 @@
 				6D4E607E1884534600132FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D4E607F1884534600132FB0 /* Build configuration list for PBXNativeTarget "ContactTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +473,7 @@
 				6D4E60811884534600132FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

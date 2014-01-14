@@ -15,6 +15,22 @@
 
 @implementation EDENFormContactViewController
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.navigationItem.title = @"Novo contato";
+        
+        UIBarButtonItem * buttonConfirm = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(saveContact)];
+        self.navigationItem.rightBarButtonItem = buttonConfirm;
+        
+        self.contacts = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +51,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)getFormData:(id)sender {
+
+- (void) saveContact
+{
+    EDENContactModel * contact = [self getFormData];
+    
+    [self.view endEditing:YES];
+    
+    [self.contacts addObject:contact];
+    
+    NSLog(@"Contact added: %@", self.contacts);
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (EDENContactModel *) getFormData {
     EDENContactModel * contact = [[EDENContactModel alloc] init];
     
     contact.name    = self.name.text;
@@ -44,9 +74,7 @@
     contact.address = self.address.text;
     contact.site    = self.site.text;
     
-    NSLog(@"Contact added: %@", contact);
-    
-    [self.view endEditing:YES];
+    return contact;
 }
 
 - (IBAction)nextField:(UITextField *)currentField {

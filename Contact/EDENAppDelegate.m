@@ -7,16 +7,17 @@
 //
 
 #import "EDENAppDelegate.h"
-#import "EDENFormContactViewController.h"
+#import "EDENContactListViewController.h"
 
 @implementation EDENAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
-    EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
+    EDENContactListViewController* contactList = [[EDENContactListViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:contactList];
     
-    self.window.rootViewController = form;
+    self.window.rootViewController = navigationController;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
