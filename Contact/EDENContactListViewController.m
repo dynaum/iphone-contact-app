@@ -12,6 +12,8 @@
 
 @implementation EDENContactListViewController
 
+static NSString *const PoolName = @"contactsPool";
+
 - (id) init
 {
     self = [super init];
@@ -44,12 +46,12 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString  * poolName = @"contactsPool";
-    EDENContactModel * item     = [self.contacts objectAtIndex:indexPath.row];
-    UITableViewCell  * cell     = [tableView dequeueReusableCellWithIdentifier:poolName forIndexPath:indexPath];
+    
+    EDENContactModel * item = [self.contacts objectAtIndex:indexPath.row];
+    UITableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:PoolName];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:poolName];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:PoolName];
     }
     
     cell.textLabel.text       = item.name;
@@ -60,6 +62,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
 
