@@ -15,7 +15,7 @@
 
 @implementation EDENFormContactViewController
 
-- (id)init
+- (id) init
 {
     self = [super init];
     
@@ -24,8 +24,6 @@
         
         UIBarButtonItem * buttonConfirm = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(saveContact)];
         self.navigationItem.rightBarButtonItem = buttonConfirm;
-        
-        self.contacts = [[NSMutableArray alloc] init];
     }
     
     return self;

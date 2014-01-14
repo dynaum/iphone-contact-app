@@ -13,15 +13,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
-    EDENContactListViewController* contactList = [[EDENContactListViewController alloc] init];
+    self.contacts = [[NSMutableArray alloc] init];
+    self.window   = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
+    
+    EDENContactListViewController * contactList = [[EDENContactListViewController alloc] init];
+    contactList.contacts = self.contacts;
+    
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:contactList];
     
     self.window.rootViewController = navigationController;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
+
     return YES;
 }
 

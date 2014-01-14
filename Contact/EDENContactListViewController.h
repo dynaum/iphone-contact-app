@@ -10,4 +10,6 @@
 
 @interface EDENContactListViewController : UITableViewController
 
+@property (weak, atomic) NSMutableArray * contacts;
+
 @end

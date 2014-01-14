@@ -19,7 +19,6 @@
         
         UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
         self.navigationItem.rightBarButtonItem = buttonItem;
-        
     }
     return self;
 }
@@ -27,6 +26,8 @@
 - (void) showForm
 {
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
+    form.contacts = self.contacts;
+    
     [self.navigationController pushViewController:form animated:YES];
 }
 

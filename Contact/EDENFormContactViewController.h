@@ -14,8 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UITextField *site;
-
-@property (strong, atomic) NSMutableArray * contacts;
+@property (weak, atomic) NSMutableArray * contacts;
 
 - (IBAction)nextField:(UITextField *)currentField;
 @end
