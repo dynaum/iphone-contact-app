@@ -8,6 +8,7 @@
 
 #import "EDENContactListViewController.h"
 #import "EDENFormContactViewController.h"
+#import "EDENContactModel.h"
 
 @implementation EDENContactListViewController
 
@@ -29,6 +30,32 @@
     form.contacts = self.contacts;
     
     [self.navigationController pushViewController:form animated:YES];
+}
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.contacts count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EDENContactModel * item = [self.contacts objectAtIndex:indexPath.row];
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    
+    cell.textLabel.text       = item.name;
+    cell.detailTextLabel.text = item.email;
+    
+    return cell;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 @end
