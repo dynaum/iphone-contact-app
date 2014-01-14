@@ -22,6 +22,8 @@ static NSString *const PoolName = @"contactsPool";
         
         UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
         self.navigationItem.rightBarButtonItem = buttonItem;
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -63,6 +65,22 @@ static NSString *const PoolName = @"contactsPool";
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.contacts removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    EDENContactModel * contact = self.contacts[sourceIndexPath.row];
+    
+    [self.contacts removeObjectAtIndex:sourceIndexPath.row];
+    [self.contacts insertObject:contact atIndex:destinationIndexPath.row];
 }
 
 @end
