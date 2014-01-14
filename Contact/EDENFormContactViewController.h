@@ -16,4 +16,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *site;
 
 - (IBAction)getFormData:(id)sender;
+- (IBAction)nextField:(UITextField *)currentField;
 @end

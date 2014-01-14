@@ -49,4 +49,10 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)nextField:(UITextField *)currentField {
+    UIResponder * nextField = [self.view viewWithTag:(currentField.tag + 1)];
+    
+    nextField ? [nextField becomeFirstResponder] : [currentField resignFirstResponder];
+}
+
 @end
