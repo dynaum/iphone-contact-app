@@ -10,4 +10,9 @@
 
 @implementation EDENContactModel
 
+- (NSString *) description
+{
+    return [NSString stringWithFormat: @"%@ <%@>", self.name, self.email];
+}
+
 @end

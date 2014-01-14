@@ -44,7 +44,9 @@
     contact.address = self.address.text;
     contact.site    = self.site.text;
     
-    NSLog(@"Contact added: %@", contact.name);
+    NSLog(@"Contact added: %@", contact);
+    
+    [self.view endEditing:YES];
 }
 
 @end
