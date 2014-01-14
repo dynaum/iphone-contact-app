@@ -17,6 +17,7 @@ static NSString *const PoolName = @"contactsPool";
 - (id) init
 {
     self = [super init];
+    
     if (self) {
         self.navigationItem.title = @"Contatos";
         
@@ -81,6 +82,15 @@ static NSString *const PoolName = @"contactsPool";
     
     [self.contacts removeObjectAtIndex:sourceIndexPath.row];
     [self.contacts insertObject:contact atIndex:destinationIndexPath.row];
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EDENContactModel * contact = self.contacts[indexPath.row];
+    
+    EDENFormContactViewController * form = [[EDENFormContactViewController alloc] initWithContact: contact];
+
+    [self.navigationController pushViewController:form animated:YES];
 }
 
 @end

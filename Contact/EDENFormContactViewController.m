@@ -29,6 +29,22 @@
     return self;
 }
 
+- (id) initWithContact:(EDENContactModel *)contact
+{
+    self = [super init];
+    
+    if (self) {
+        self.contact = contact;
+        
+        self.navigationItem.title = @"Edição";
+        
+        UIBarButtonItem * buttonConfirm = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(editContact)];
+        self.navigationItem.rightBarButtonItem = buttonConfirm;
+    }
+    
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,7 +57,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    if (self.contact) {
+        self.name.text    = self.contact.name;
+        self.email.text   = self.contact.email;
+        self.phone.text   = self.contact.phone;
+        self.address.text = self.contact.address;
+        self.site.text    = self.contact.site;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,25 +77,27 @@
 {
     EDENContactModel * contact = [self getFormData];
     
-    [self.view endEditing:YES];
-    
     [self.contacts addObject:contact];
-    
-    NSLog(@"Contact added: %@", self.contacts);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void) editContact
+{
+    [self getFormData];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (EDENContactModel *) getFormData {
-    EDENContactModel * contact = [[EDENContactModel alloc] init];
+    !self.contact && (self.contact = [[EDENContactModel alloc] init]);
     
-    contact.name    = self.name.text;
-    contact.email   = self.email.text;
-    contact.phone   = self.phone.text;
-    contact.address = self.address.text;
-    contact.site    = self.site.text;
+    self.contact.name    = self.name.text;
+    self.contact.email   = self.email.text;
+    self.contact.phone   = self.phone.text;
+    self.contact.address = self.address.text;
+    self.contact.site    = self.site.text;
     
-    return contact;
+    return self.contact;
 }
 
 - (IBAction)nextField:(UITextField *)currentField {

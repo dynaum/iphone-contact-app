@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDENContactModel.h"
 
 @interface EDENFormContactViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *name;
@@ -15,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UITextField *site;
 @property (weak, atomic) NSMutableArray * contacts;
+@property (strong, atomic) EDENContactModel * contact;
 
-- (IBAction)nextField:(UITextField *)currentField;
+- (IBAction)nextField:(UITextField *) currentField;
+- (id) initWithContact:(EDENContactModel *) contact;
 @end
