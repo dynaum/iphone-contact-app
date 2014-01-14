@@ -75,7 +75,8 @@
 
 - (void) saveContact
 {
-    EDENContactModel * contact = [self getFormData];
+    EDENContactModel * contact = [[EDENContactModel alloc] init];
+    [self setFormData:contact];
     
     [self.contacts addObject:contact];
     
@@ -84,20 +85,16 @@
 
 - (void) editContact
 {
-    [self getFormData];
+    [self setFormData:self.contact];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (EDENContactModel *) getFormData {
-    !self.contact && (self.contact = [[EDENContactModel alloc] init]);
-    
-    self.contact.name    = self.name.text;
-    self.contact.email   = self.email.text;
-    self.contact.phone   = self.phone.text;
-    self.contact.address = self.address.text;
-    self.contact.site    = self.site.text;
-    
-    return self.contact;
+- (void) setFormData:(EDENContactModel *)contact {
+    contact.name    = self.name.text;
+    contact.email   = self.email.text;
+    contact.phone   = self.phone.text;
+    contact.address = self.address.text;
+    contact.site    = self.site.text;
 }
 
 - (IBAction)nextField:(UITextField *)currentField {
