@@ -13,7 +13,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.contacts = [[NSMutableArray alloc] init];
+    NSArray * directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentDiretory = directories[0];
+    self.fileName = [NSString stringWithFormat:@"%@/Contacts.data", documentDiretory];
+    
+    self.contacts = [NSKeyedUnarchiver unarchiveObjectWithFile:self.fileName];
+    if (!self.contacts) {
+        self.contacts = [[NSMutableArray alloc] init];
+    }
+    
     self.window   = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
     
     EDENContactListViewController * contactList = [[EDENContactListViewController alloc] init];
@@ -37,8 +45,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [NSKeyedArchiver archiveRootObject:self.contacts toFile:self.fileName];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
