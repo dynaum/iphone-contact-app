@@ -44,8 +44,13 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EDENContactModel * item = [self.contacts objectAtIndex:indexPath.row];
-    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    static NSString  * poolName = @"contactsPool";
+    EDENContactModel * item     = [self.contacts objectAtIndex:indexPath.row];
+    UITableViewCell  * cell     = [tableView dequeueReusableCellWithIdentifier:poolName forIndexPath:indexPath];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:poolName];
+    }
     
     cell.textLabel.text       = item.name;
     cell.detailTextLabel.text = item.email;
