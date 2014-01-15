@@ -11,6 +11,10 @@
 
 @protocol EDENFormContactViewControllerDelegate <NSObject>
 
-- (void) contactAdded: (EDENContactModel *)contact;
+- (void) contactAdded: (EDENContactModel *) contact;
+
+@optional
+
+- (void) contactEdited: (EDENContactModel *) contact;
 
 @end

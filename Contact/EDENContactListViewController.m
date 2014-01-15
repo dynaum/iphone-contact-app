@@ -88,6 +88,7 @@ static NSString *const PoolName = @"contactsPool";
     EDENContactModel * contact = self.contacts[indexPath.row];
     
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] initWithContact: contact];
+    form.delegate = self;
 
     [self.navigationController pushViewController:form animated:YES];
 }

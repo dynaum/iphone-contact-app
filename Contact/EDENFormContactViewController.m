@@ -86,6 +86,11 @@
 - (void) editContact
 {
     [self setFormData:self.contact];
+    
+    if ( [self.delegate respondsToSelector:@selector(contactEdited:)] ) {
+        [self.delegate contactEdited:self.contact];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
