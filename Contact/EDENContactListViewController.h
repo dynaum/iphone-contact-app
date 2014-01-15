@@ -10,8 +10,12 @@
 #import "EDENContactModel.h"
 #import "EDENFormContactViewControllerDelegate.h"
 
-@interface EDENContactListViewController : UITableViewController <EDENFormContactViewControllerDelegate>
+@interface EDENContactListViewController : UITableViewController <EDENFormContactViewControllerDelegate, UIActionSheetDelegate>
+{
+    EDENContactModel * selectedContact;
+}
 
 @property (weak, atomic) NSMutableArray * contacts;
+@property (assign, atomic) NSInteger selectedIndex;
 
 @end

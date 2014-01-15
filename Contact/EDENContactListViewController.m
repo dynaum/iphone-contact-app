@@ -9,9 +9,20 @@
 #import "EDENContactListViewController.h"
 #import "EDENFormContactViewController.h"
 
+@interface EDENContactListViewController ()
+
+- (void) cleanupIndex;
+
+@end
+
 @implementation EDENContactListViewController
 
 static NSString *const PoolName = @"contactsPool";
+
+- (void) cleanupIndex
+{
+    self.selectedIndex = -1;
+}
 
 - (id) init
 {
@@ -19,6 +30,7 @@ static NSString *const PoolName = @"contactsPool";
     
     if (self) {
         self.navigationItem.title = @"Contatos";
+        [self cleanupIndex];
         
         UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
         self.navigationItem.rightBarButtonItem = buttonItem;
@@ -34,6 +46,19 @@ static NSString *const PoolName = @"contactsPool";
     form.delegate = self;
     
     [self.navigationController pushViewController:form animated:YES];
+}
+
+- (void) showMenu:(UIGestureRecognizer *)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint gesturePoint = [gesture locationInView:self.tableView];
+        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:gesturePoint];
+        selectedContact = self.contacts[indexPath.row];
+        
+        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:selectedContact.name delegate:self cancelButtonTitle:@"deixa queto" destructiveButtonTitle:nil otherButtonTitles:@"Ligar",@"Enviar email",@"Ver site", @"Ver no mapa", nil];
+        
+        [actionSheet showInView:self.view];
+    }
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -93,9 +118,93 @@ static NSString *const PoolName = @"contactsPool";
     [self.navigationController pushViewController:form animated:YES];
 }
 
+- (void) viewDidLoad
+{
+    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showMenu:)];
+    [self.tableView addGestureRecognizer:longPress];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (self.selectedIndex > -1) {
+        NSIndexPath * indexPath = [NSIndexPath indexPathForRow:self.selectedIndex inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        
+        [self cleanupIndex];
+    }
+}
+
+#pragma mark - Actions
+- (void) openAppWithUrl:(NSString *)urlString
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+}
+
+- (void) actionCall
+{
+    UIDevice * device = [UIDevice currentDevice];
+    
+    if ([device.model isEqualToString:@"iPhone"]) {
+        NSString * urlString = [NSString stringWithFormat:@"tel:%@", selectedContact.phone];
+        [self openAppWithUrl:urlString];
+    }
+    else {
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Opss" message:@"Se fudeu" delegate:nil cancelButtonTitle:@"De boa" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+- (void) actionEmail
+{
+    
+}
+
+- (void) actionSite
+{
+    NSString * urlString = [NSString stringWithFormat:@"http:%@", selectedContact.site];
+    [self openAppWithUrl:urlString];
+}
+
+- (void) actionMap
+{
+    NSString * urlString = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", selectedContact.address] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self openAppWithUrl:urlString];
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self actionCall];
+            break;
+        case 1:
+            [self actionEmail];
+            break;
+        case 2:
+            [self actionSite];
+            break;
+        case 3:
+            [self actionMap];
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - EDENFormContactViewControllerDelegate
 - (void) contactAdded:(EDENContactModel *)contact
 {
     [self.contacts addObject:contact];
+    self.selectedIndex = [self.contacts indexOfObject:contact];
+}
+
+- (void) contactEdited:(EDENContactModel *)contact
+{
+    self.selectedIndex = [self.contacts indexOfObject:contact];
 }
 
 @end

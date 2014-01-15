@@ -23,6 +23,7 @@
 		6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4E6084188456F500132FB0 /* EDENFormContactViewController.xib */; };
 		6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6088188467FE00132FB0 /* EDENContactModel.m */; };
 		6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */; };
+		6DDF0F0A1886EBBD009DA67D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F091886EBBD009DA67D /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		6D4E608A18856BD600132FB0 /* EDENContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactListViewController.h; sourceTree = "<group>"; };
 		6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactListViewController.m; sourceTree = "<group>"; };
 		6DDF0F081886AC4E009DA67D /* EDENFormContactViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDENFormContactViewControllerDelegate.h; sourceTree = "<group>"; };
+		6DDF0F091886EBBD009DA67D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDF0F0A1886EBBD009DA67D /* MessageUI.framework in Frameworks */,
 				6D4E60561884534600132FB0 /* CoreGraphics.framework in Frameworks */,
 				6D4E60581884534600132FB0 /* UIKit.framework in Frameworks */,
 				6D4E60541884534600132FB0 /* Foundation.framework in Frameworks */,
@@ -108,6 +111,7 @@
 		6D4E60521884534600132FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DDF0F091886EBBD009DA67D /* MessageUI.framework */,
 				6D4E60531884534600132FB0 /* Foundation.framework */,
 				6D4E60551884534600132FB0 /* CoreGraphics.framework */,
 				6D4E60571884534600132FB0 /* UIKit.framework */,
