@@ -27,6 +27,15 @@
 		6DDF0F0C188706BD009DA67D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F0B188706BD009DA67D /* MapKit.framework */; };
 		6DDF0F101887070D009DA67D /* EDENContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDF0F0E1887070D009DA67D /* EDENContactsMapViewController.m */; };
 		6DDF0F111887070D009DA67D /* EDENContactsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F0F1887070D009DA67D /* EDENContactsMapViewController.xib */; };
+		6DDF0F1B18870B74009DA67D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1218870B74009DA67D /* Default.png */; };
+		6DDF0F1C18870B74009DA67D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1318870B74009DA67D /* Default@2x.png */; };
+		6DDF0F1D18870B74009DA67D /* gps.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1418870B74009DA67D /* gps.png */; };
+		6DDF0F1E18870B74009DA67D /* gps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1518870B74009DA67D /* gps@2x.png */; };
+		6DDF0F1F18870B74009DA67D /* lista-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1618870B74009DA67D /* lista-contatos.png */; };
+		6DDF0F2018870B74009DA67D /* lista-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1718870B74009DA67D /* lista-contatos@2x.png */; };
+		6DDF0F2118870B74009DA67D /* mapa-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1818870B74009DA67D /* mapa-contatos.png */; };
+		6DDF0F2218870B74009DA67D /* mapa-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1918870B74009DA67D /* mapa-contatos@2x.png */; };
+		6DDF0F2318870B74009DA67D /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6DDF0F1A18870B74009DA67D /* Vila Mariana.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +78,15 @@
 		6DDF0F0D1887070D009DA67D /* EDENContactsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactsMapViewController.h; sourceTree = "<group>"; };
 		6DDF0F0E1887070D009DA67D /* EDENContactsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactsMapViewController.m; sourceTree = "<group>"; };
 		6DDF0F0F1887070D009DA67D /* EDENContactsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDENContactsMapViewController.xib; sourceTree = "<group>"; };
+		6DDF0F1218870B74009DA67D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6DDF0F1318870B74009DA67D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6DDF0F1418870B74009DA67D /* gps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gps.png; sourceTree = "<group>"; };
+		6DDF0F1518870B74009DA67D /* gps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gps@2x.png"; sourceTree = "<group>"; };
+		6DDF0F1618870B74009DA67D /* lista-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos.png"; sourceTree = "<group>"; };
+		6DDF0F1718870B74009DA67D /* lista-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos@2x.png"; sourceTree = "<group>"; };
+		6DDF0F1818870B74009DA67D /* mapa-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos.png"; sourceTree = "<group>"; };
+		6DDF0F1918870B74009DA67D /* mapa-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos@2x.png"; sourceTree = "<group>"; };
+		6DDF0F1A18870B74009DA67D /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,7 @@
 		6D4E60471884534600132FB0 = {
 			isa = PBXGroup;
 			children = (
+				6DDF0F2418870C28009DA67D /* Images */,
 				6D4E60591884534600132FB0 /* Contact */,
 				6D4E60721884534600132FB0 /* ContactTests */,
 				6D4E60521884534600132FB0 /* Frameworks */,
@@ -180,6 +199,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6DDF0F2418870C28009DA67D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6DDF0F1218870B74009DA67D /* Default.png */,
+				6DDF0F1318870B74009DA67D /* Default@2x.png */,
+				6DDF0F1418870B74009DA67D /* gps.png */,
+				6DDF0F1518870B74009DA67D /* gps@2x.png */,
+				6DDF0F1618870B74009DA67D /* lista-contatos.png */,
+				6DDF0F1718870B74009DA67D /* lista-contatos@2x.png */,
+				6DDF0F1818870B74009DA67D /* mapa-contatos.png */,
+				6DDF0F1918870B74009DA67D /* mapa-contatos@2x.png */,
+				6DDF0F1A18870B74009DA67D /* Vila Mariana.gpx */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,10 +291,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDF0F1C18870B74009DA67D /* Default@2x.png in Resources */,
+				6DDF0F1E18870B74009DA67D /* gps@2x.png in Resources */,
 				6D4E605E1884534600132FB0 /* InfoPlist.strings in Resources */,
 				6D4E6086188456F500132FB0 /* EDENFormContactViewController.xib in Resources */,
+				6DDF0F2218870B74009DA67D /* mapa-contatos@2x.png in Resources */,
 				6DDF0F111887070D009DA67D /* EDENContactsMapViewController.xib in Resources */,
 				6D4E60661884534600132FB0 /* Images.xcassets in Resources */,
+				6DDF0F1B18870B74009DA67D /* Default.png in Resources */,
+				6DDF0F2318870B74009DA67D /* Vila Mariana.gpx in Resources */,
+				6DDF0F1F18870B74009DA67D /* lista-contatos.png in Resources */,
+				6DDF0F2118870B74009DA67D /* mapa-contatos.png in Resources */,
+				6DDF0F1D18870B74009DA67D /* gps.png in Resources */,
+				6DDF0F2018870B74009DA67D /* lista-contatos@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

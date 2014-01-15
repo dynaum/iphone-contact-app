@@ -8,6 +8,7 @@
 
 #import "EDENAppDelegate.h"
 #import "EDENContactListViewController.h"
+#import "EDENContactsMapViewController.h"
 
 @implementation EDENAppDelegate
 
@@ -22,14 +23,20 @@
         self.contacts = [[NSMutableArray alloc] init];
     }
     
-    self.window   = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
+    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
     
     EDENContactListViewController * contactList = [[EDENContactListViewController alloc] init];
     contactList.contacts = self.contacts;
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:contactList];
     
-    self.window.rootViewController = navigationController;
+    EDENContactsMapViewController * mapController = [[EDENContactsMapViewController alloc] init];
+    UINavigationController * mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapController];
+    
+    UITabBarController * tabController = [[UITabBarController alloc] init];
+    tabController.viewControllers = @[navigationController, mapNavigationController];
+    
+    self.window.rootViewController = tabController;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
