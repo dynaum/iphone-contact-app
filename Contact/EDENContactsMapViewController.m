@@ -14,6 +14,19 @@
 
 @implementation EDENContactsMapViewController
 
+- (id) init
+{
+    self = [super init];
+    
+    if (self) {
+        UIImage * contactImage = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem * tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:contactImage tag:1];
+        
+        self.tabBarItem = tabBarItem;
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

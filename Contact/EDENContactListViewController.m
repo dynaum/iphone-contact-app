@@ -36,6 +36,11 @@ static NSString *const PoolName = @"contactsPool";
         self.navigationItem.rightBarButtonItem = buttonItem;
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        
+        UIImage * contactImage = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem * tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:contactImage tag:1];
+        
+        self.tabBarItem = tabBarItem;
     }
     return self;
 }
