@@ -82,6 +82,7 @@ static NSString *const PoolName = @"contactsPool";
     
     cell.textLabel.text       = item.name;
     cell.detailTextLabel.text = item.email;
+    [cell.imageView setImage:item.picture];
     
     return cell;
 }
@@ -142,6 +143,11 @@ static NSString *const PoolName = @"contactsPool";
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
+- (void) showErrorMessage:(NSString *) message
+{
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Opss" message:message delegate:nil cancelButtonTitle:@"De boa" otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (void) actionCall
 {
@@ -152,14 +158,25 @@ static NSString *const PoolName = @"contactsPool";
         [self openAppWithUrl:urlString];
     }
     else {
-        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Opss" message:@"Se fudeu" delegate:nil cancelButtonTitle:@"De boa" otherButtonTitles:nil];
-        [alertView show];
+        [self showErrorMessage:@"Se fudeu"];
     }
 }
 
 - (void) actionEmail
 {
-    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
+        
+        [mail setToRecipients:@[selectedContact.description]];
+        [mail setSubject:@"Um email malandrao"];
+        
+        mail.mailComposeDelegate = self;
+        
+        [self presentViewController:mail animated:YES completion:nil];
+    }
+    else {
+        [self showErrorMessage:@"Já era mané!"];
+    }
 }
 
 - (void) actionSite
@@ -172,6 +189,12 @@ static NSString *const PoolName = @"contactsPool";
 {
     NSString * urlString = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", selectedContact.address] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self openAppWithUrl:urlString];
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIActionSheetDelegate

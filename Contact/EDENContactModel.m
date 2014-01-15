@@ -20,6 +20,7 @@
         self.phone   = [aDecoder decodeObjectForKey:@"phone"];
         self.address = [aDecoder decodeObjectForKey:@"address"];
         self.site    = [aDecoder decodeObjectForKey:@"site"];
+        self.picture = [aDecoder decodeObjectForKey:@"picture"];
     }
     
     return self;
@@ -37,6 +38,7 @@
     [aCoder encodeObject:self.phone   forKey:@"phone"];
     [aCoder encodeObject:self.address forKey:@"address"];
     [aCoder encodeObject:self.site    forKey:@"site"];
+    [aCoder encodeObject:self.picture forKey:@"picture"];
 }
 
 @end

@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
 #import "EDENContactModel.h"
 #import "EDENFormContactViewControllerDelegate.h"
 
-@interface EDENContactListViewController : UITableViewController <EDENFormContactViewControllerDelegate, UIActionSheetDelegate>
+@interface EDENContactListViewController : UITableViewController <EDENFormContactViewControllerDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 {
     EDENContactModel * selectedContact;
 }

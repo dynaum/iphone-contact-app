@@ -64,6 +64,7 @@
         self.phone.text   = self.contact.phone;
         self.address.text = self.contact.address;
         self.site.text    = self.contact.site;
+        [self.picture setBackgroundImage:self.contact.picture forState:UIControlStateNormal];
     }
 }
 
@@ -100,12 +101,37 @@
     contact.phone   = self.phone.text;
     contact.address = self.address.text;
     contact.site    = self.site.text;
+    contact.picture = [self.picture backgroundImageForState:UIControlStateNormal];
 }
 
 - (IBAction)nextField:(UITextField *)currentField {
     UIResponder * nextField = [self.view viewWithTag:(currentField.tag + 1)];
     
     nextField ? [nextField becomeFirstResponder] : [currentField resignFirstResponder];
+}
+
+- (IBAction) selectPicture:(id)sender
+{
+    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage * image = info[UIImagePickerControllerEditedImage];
+    [self.picture setTitle:@"" forState:UIControlStateNormal];
+    [self.picture setBackgroundImage:image forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

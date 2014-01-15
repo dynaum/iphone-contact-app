@@ -15,5 +15,6 @@
 @property (strong, atomic) NSString * phone;
 @property (strong, atomic) NSString * address;
 @property (strong, atomic) NSString * site;
+@property (strong, atomic) UIImage  * picture;
 
 @end
