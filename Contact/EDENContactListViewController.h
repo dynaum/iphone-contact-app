@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDENContactModel.h"
 
 @interface EDENContactListViewController : UITableViewController
 
 @property (weak, atomic) NSMutableArray * contacts;
+
+- (void) contactAdded:(EDENContactModel *) contact;
 
 @end

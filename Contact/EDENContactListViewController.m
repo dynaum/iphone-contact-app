@@ -8,7 +8,6 @@
 
 #import "EDENContactListViewController.h"
 #import "EDENFormContactViewController.h"
-#import "EDENContactModel.h"
 
 @implementation EDENContactListViewController
 
@@ -32,7 +31,7 @@ static NSString *const PoolName = @"contactsPool";
 - (void) showForm
 {
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
-    form.contacts = self.contacts;
+    form.listViewController = self;
     
     [self.navigationController pushViewController:form animated:YES];
 }
@@ -91,6 +90,11 @@ static NSString *const PoolName = @"contactsPool";
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] initWithContact: contact];
 
     [self.navigationController pushViewController:form animated:YES];
+}
+
+- (void) contactAdded:(EDENContactModel *)contact
+{
+    [self.contacts addObject:contact];
 }
 
 @end

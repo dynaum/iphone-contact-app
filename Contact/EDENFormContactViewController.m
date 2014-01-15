@@ -78,7 +78,7 @@
     EDENContactModel * contact = [[EDENContactModel alloc] init];
     [self setFormData:contact];
     
-    [self.contacts addObject:contact];
+    [self.listViewController contactAdded:contact];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
