@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "EDENContactModel.h"
+#import "EDENFormContactViewControllerDelegate.h"
 
-@interface EDENContactListViewController : UITableViewController
+@interface EDENContactListViewController : UITableViewController <EDENFormContactViewControllerDelegate>
 
 @property (weak, atomic) NSMutableArray * contacts;
-
-- (void) contactAdded:(EDENContactModel *) contact;
 
 @end

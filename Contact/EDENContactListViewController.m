@@ -31,7 +31,7 @@ static NSString *const PoolName = @"contactsPool";
 - (void) showForm
 {
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
-    form.listViewController = self;
+    form.delegate = self;
     
     [self.navigationController pushViewController:form animated:YES];
 }
