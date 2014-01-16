@@ -7,7 +7,6 @@
 //
 
 #import "EDENFormContactViewController.h"
-#import "EDENContactModel.h"
 
 @interface EDENFormContactViewController ()
 
@@ -112,11 +111,6 @@
     contact.longitude = [NSNumber numberWithDouble: [self.longitude.text doubleValue]];
 }
 
-- (IBAction)nextField:(UITextField *)currentField {
-    UIResponder * nextField = [self.view viewWithTag:(currentField.tag + 1)];
-    
-    nextField ? [nextField becomeFirstResponder] : [currentField resignFirstResponder];
-}
 
 - (IBAction) selectPicture:(id)sender
 {
