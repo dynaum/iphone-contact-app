@@ -59,12 +59,18 @@
     [super viewDidLoad];
     
     if (self.contact) {
-        self.name.text    = self.contact.name;
-        self.email.text   = self.contact.email;
-        self.phone.text   = self.contact.phone;
-        self.address.text = self.contact.address;
-        self.site.text    = self.contact.site;
+        self.name.text      = self.contact.name;
+        self.email.text     = self.contact.email;
+        self.phone.text     = self.contact.phone;
+        self.address.text   = self.contact.address;
+        self.site.text      = self.contact.site;
+        self.latitude.text  = [self.contact.latitude  stringValue];
+        self.longitude.text = [self.contact.longitude stringValue];
+        
         [self.picture setBackgroundImage:self.contact.picture forState:UIControlStateNormal];
+        if (self.contact.picture) {
+            [self.picture setTitle:@"" forState:UIControlStateNormal];
+        }
     }
 }
 
@@ -96,12 +102,14 @@
 }
 
 - (void) setFormData:(EDENContactModel *)contact {
-    contact.name    = self.name.text;
-    contact.email   = self.email.text;
-    contact.phone   = self.phone.text;
-    contact.address = self.address.text;
-    contact.site    = self.site.text;
-    contact.picture = [self.picture backgroundImageForState:UIControlStateNormal];
+    contact.name      = self.name.text;
+    contact.email     = self.email.text;
+    contact.phone     = self.phone.text;
+    contact.address   = self.address.text;
+    contact.site      = self.site.text;
+    contact.picture   = [self.picture backgroundImageForState:UIControlStateNormal];
+    contact.latitude  = [NSNumber numberWithDouble: [self.latitude.text doubleValue]];
+    contact.longitude = [NSNumber numberWithDouble: [self.longitude.text doubleValue]];
 }
 
 - (IBAction)nextField:(UITextField *)currentField {

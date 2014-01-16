@@ -15,12 +15,14 @@
     self = [super init];
     
     if (self) {
-        self.name    = [aDecoder decodeObjectForKey:@"name"];
-        self.email   = [aDecoder decodeObjectForKey:@"email"];
-        self.phone   = [aDecoder decodeObjectForKey:@"phone"];
-        self.address = [aDecoder decodeObjectForKey:@"address"];
-        self.site    = [aDecoder decodeObjectForKey:@"site"];
-        self.picture = [aDecoder decodeObjectForKey:@"picture"];
+        self.name      = [aDecoder decodeObjectForKey:@"name"];
+        self.email     = [aDecoder decodeObjectForKey:@"email"];
+        self.phone     = [aDecoder decodeObjectForKey:@"phone"];
+        self.address   = [aDecoder decodeObjectForKey:@"address"];
+        self.site      = [aDecoder decodeObjectForKey:@"site"];
+        self.picture   = [aDecoder decodeObjectForKey:@"picture"];
+        self.latitude  = [aDecoder decodeObjectForKey:@"latitude"];
+        self.longitude = [aDecoder decodeObjectForKey:@"longitude"];
     }
     
     return self;
@@ -33,12 +35,14 @@
 
 - (void) encodeWithCoder : (NSCoder *) aCoder
 {
-    [aCoder encodeObject:self.name    forKey:@"name"];
-    [aCoder encodeObject:self.email   forKey:@"email"];
-    [aCoder encodeObject:self.phone   forKey:@"phone"];
-    [aCoder encodeObject:self.address forKey:@"address"];
-    [aCoder encodeObject:self.site    forKey:@"site"];
-    [aCoder encodeObject:self.picture forKey:@"picture"];
+    [aCoder encodeObject:self.name      forKey:@"name"];
+    [aCoder encodeObject:self.email     forKey:@"email"];
+    [aCoder encodeObject:self.phone     forKey:@"phone"];
+    [aCoder encodeObject:self.address   forKey:@"address"];
+    [aCoder encodeObject:self.site      forKey:@"site"];
+    [aCoder encodeObject:self.picture   forKey:@"picture"];
+    [aCoder encodeObject:self.latitude  forKey:@"latitude"];
+    [aCoder encodeObject:self.longitude forKey:@"longitude"];
 }
 
 @end

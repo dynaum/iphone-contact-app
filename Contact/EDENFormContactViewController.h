@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *address;
 @property (weak, nonatomic) IBOutlet UITextField *site;
 @property (weak, nonatomic) IBOutlet UIButton    *picture;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
 
 @property (strong, atomic) EDENContactModel * contact;
 @property (weak, atomic) id <EDENFormContactViewControllerDelegate> delegate;

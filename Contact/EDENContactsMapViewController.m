@@ -39,7 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    MKUserTrackingBarButtonItem * button = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.map];
+    self.navigationItem.leftBarButtonItem = button;
 }
 
 - (void)didReceiveMemoryWarning

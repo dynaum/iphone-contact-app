@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EDENContactsMapViewController">
             <connections>
+                <outlet property="map" destination="HKn-lM-EVe" id="Qts-lq-0yg"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
