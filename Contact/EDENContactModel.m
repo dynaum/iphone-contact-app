@@ -45,4 +45,20 @@
     [aCoder encodeObject:self.longitude forKey:@"longitude"];
 }
 
+#pragma mark - MKAnnotation
+- (CLLocationCoordinate2D) coordinate
+{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
+- (NSString *) title
+{
+    return self.name;
+}
+
+- (NSString *) subtitle
+{
+    return [NSString stringWithFormat:@"%@: %@", self.email, self.phone];
+}
+
 @end

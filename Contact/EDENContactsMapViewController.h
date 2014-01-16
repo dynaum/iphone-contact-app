@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "EDENContactModel.h"
 
-@interface EDENContactsMapViewController : UIViewController
+@interface EDENContactsMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (weak, atomic) NSMutableArray * contacts;
 
 @end

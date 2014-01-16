@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface EDENContactModel : NSObject <NSCoding>
+@interface EDENContactModel : NSObject <NSCoding,MKAnnotation>
 
 @property (strong, atomic) NSString * name;
 @property (strong, atomic) NSString * email;

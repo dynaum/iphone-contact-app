@@ -31,6 +31,8 @@
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:contactList];
     
     EDENContactsMapViewController * mapController = [[EDENContactsMapViewController alloc] init];
+    mapController.contacts = self.contacts;
+    
     UINavigationController * mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapController];
     
     UITabBarController * tabController = [[UITabBarController alloc] init];

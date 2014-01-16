@@ -14,6 +14,8 @@
 
 @implementation EDENContactsMapViewController
 
+static NSString *const PoolName = @"annotationsPool";
+
 - (id) init
 {
     self = [super init];
@@ -43,10 +45,50 @@
     self.navigationItem.leftBarButtonItem = button;
 }
 
+- (void) viewWillAppear:(BOOL) animated
+{
+    [self.map addAnnotations:self.contacts];
+}
+
+- (void) viewWillDisappear:(BOOL) animated
+{
+    [self.map removeAnnotations:self.map.annotations];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - MKMapViewDelegate
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    MKPinAnnotationView * annotationView = (MKPinAnnotationView *)[self.map dequeueReusableAnnotationViewWithIdentifier:PoolName];
+    
+    if (!annotationView) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PoolName];
+    }
+    else {
+        annotationView.annotation = annotation;
+    }
+    
+    annotationView.pinColor = MKPinAnnotationColorPurple;
+    annotationView.canShowCallout = YES;
+    
+    EDENContactModel * contact = (EDENContactModel *) annotation;
+    if (contact.picture) {
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+        imageView.image = contact.picture;
+        
+        annotationView.leftCalloutAccessoryView = imageView;
+    }
+    
+    return annotationView;
 }
 
 @end
