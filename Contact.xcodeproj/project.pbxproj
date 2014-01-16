@@ -24,6 +24,7 @@
 		6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E6088188467FE00132FB0 /* EDENContactModel.m */; };
 		6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */; };
 		6DB04376188820F800436B9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB04375188820F800436B9B /* CoreLocation.framework */; };
+		6DB043781888600000436B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB043771888600000436B9B /* CoreData.framework */; };
 		6DDF0F0A1886EBBD009DA67D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F091886EBBD009DA67D /* MessageUI.framework */; };
 		6DDF0F0C188706BD009DA67D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F0B188706BD009DA67D /* MapKit.framework */; };
 		6DDF0F101887070D009DA67D /* EDENContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDF0F0E1887070D009DA67D /* EDENContactsMapViewController.m */; };
@@ -76,6 +77,7 @@
 		6D4E608A18856BD600132FB0 /* EDENContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDENContactListViewController.h; sourceTree = "<group>"; };
 		6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactListViewController.m; sourceTree = "<group>"; };
 		6DB04375188820F800436B9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6DB043771888600000436B9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6DDF0F081886AC4E009DA67D /* EDENFormContactViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDENFormContactViewControllerDelegate.h; sourceTree = "<group>"; };
 		6DDF0F091886EBBD009DA67D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6DDF0F0B188706BD009DA67D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB043781888600000436B9B /* CoreData.framework in Frameworks */,
 				6DB04376188820F800436B9B /* CoreLocation.framework in Frameworks */,
 				6DDF0F0C188706BD009DA67D /* MapKit.framework in Frameworks */,
 				6DDF0F0A1886EBBD009DA67D /* MessageUI.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		6D4E60521884534600132FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DB043771888600000436B9B /* CoreData.framework */,
 				6DB04375188820F800436B9B /* CoreLocation.framework */,
 				6DDF0F0B188706BD009DA67D /* MapKit.framework */,
 				6DDF0F091886EBBD009DA67D /* MessageUI.framework */,
