@@ -23,7 +23,6 @@
 @property (strong, atomic) EDENContactModel * contact;
 @property (weak, atomic) id <EDENFormContactViewControllerDelegate> delegate;
 
-- (IBAction)nextField:(UITextField *) currentField;
 - (id) initWithContact:(EDENContactModel *) contact;
 - (IBAction)selectPicture:(id)sender;
 @end
