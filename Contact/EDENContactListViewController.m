@@ -62,7 +62,7 @@ static NSString *const PoolName = @"contactsPool";
         
         UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:selectedContact.name delegate:self cancelButtonTitle:@"deixa queto" destructiveButtonTitle:nil otherButtonTitles:@"Ligar",@"Enviar email",@"Ver site", @"Ver no mapa", nil];
         
-        [actionSheet showInView:self.view];
+        [actionSheet showFromTabBar:self.tabBarController.tabBar];
     }
 }
 

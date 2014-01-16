@@ -10,6 +10,7 @@
                 <outlet property="address" destination="iON-i2-7xl" id="b1A-5V-r4h"/>
                 <outlet property="email" destination="eAf-7b-QE6" id="kzz-MM-XjZ"/>
                 <outlet property="latitude" destination="MqW-8P-PXh" id="ehf-0f-iUV"/>
+                <outlet property="locationButton" destination="gea-Q9-6U1" id="5td-7v-Bh3"/>
                 <outlet property="longitude" destination="EJY-2R-Zs2" id="fOj-eb-zlm"/>
                 <outlet property="name" destination="hRb-po-GYG" id="4u5-ku-82F"/>
                 <outlet property="phone" destination="vn8-uY-kqN" id="tQN-kx-m7r"/>

@@ -22,9 +22,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *latitude;
 @property (weak, nonatomic) IBOutlet UITextField *longitude;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
 
 @property (strong, atomic) EDENContactModel * contact;
 @property (weak, atomic) id <EDENFormContactViewControllerDelegate> delegate;
+
 
 - (id) initWithContact:(EDENContactModel *) contact;
 - (IBAction)selectPicture:(id)sender;

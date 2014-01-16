@@ -139,6 +139,8 @@
 - (IBAction) searchLocation:(id)sender
 {
     [self.activityIndicator startAnimating];
+    self.locationButton.hidden = YES;
+
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     [geoCoder geocodeAddressString:self.address.text completionHandler: ^(NSArray * results, NSError * error) {
         if (!error && [results count] > 0) {
@@ -149,6 +151,7 @@
             self.longitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
         }
         [self.activityIndicator stopAnimating];
+        self.locationButton.hidden = NO;
     }];
 }
 
