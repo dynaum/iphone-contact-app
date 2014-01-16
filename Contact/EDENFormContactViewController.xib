@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EDENFormContactViewController">
             <connections>
+                <outlet property="activityIndicator" destination="6uf-lq-3nm" id="fET-vc-PRV"/>
                 <outlet property="address" destination="iON-i2-7xl" id="b1A-5V-r4h"/>
                 <outlet property="email" destination="eAf-7b-QE6" id="kzz-MM-XjZ"/>
                 <outlet property="latitude" destination="MqW-8P-PXh" id="ehf-0f-iUV"/>
@@ -90,7 +91,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="URL"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MqW-8P-PXh">
-                    <rect key="frame" x="111" y="209" width="189" height="30"/>
+                    <rect key="frame" x="111" y="209" width="100" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="URL"/>
@@ -102,7 +103,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJY-2R-Zs2">
-                    <rect key="frame" x="112" y="247" width="189" height="30"/>
+                    <rect key="frame" x="112" y="247" width="99" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="URL"/>
@@ -118,6 +119,21 @@
                         <action selector="selectPicture:" destination="-1" eventType="touchUpInside" id="siH-aY-oz2"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gea-Q9-6U1">
+                    <rect key="frame" x="215" y="209" width="85" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="gps.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="searchLocation:" destination="-1" eventType="touchUpInside" id="5B0-dD-uAu"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-lq-3nm">
+                    <rect key="frame" x="239" y="224" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -125,4 +141,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="gps.png" width="30" height="30"/>
+    </resources>
 </document>

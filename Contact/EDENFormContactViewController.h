@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "EDENContactModel.h"
 #import "EDENFormContactViewControllerDelegate.h"
 
 @interface EDENFormContactViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -19,10 +21,13 @@
 @property (weak, nonatomic) IBOutlet UIButton    *picture;
 @property (weak, nonatomic) IBOutlet UITextField *latitude;
 @property (weak, nonatomic) IBOutlet UITextField *longitude;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, atomic) EDENContactModel * contact;
 @property (weak, atomic) id <EDENFormContactViewControllerDelegate> delegate;
 
 - (id) initWithContact:(EDENContactModel *) contact;
 - (IBAction)selectPicture:(id)sender;
+- (IBAction)searchLocation:(id)sender;
+
 @end

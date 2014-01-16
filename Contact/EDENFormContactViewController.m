@@ -136,4 +136,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction) searchLocation:(id)sender
+{
+    [self.activityIndicator startAnimating];
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder geocodeAddressString:self.address.text completionHandler: ^(NSArray * results, NSError * error) {
+        if (!error && [results count] > 0) {
+            CLPlacemark * result = results[0];
+            CLLocationCoordinate2D coordinate = result.location.coordinate;
+            
+            self.latitude.text  = [NSString stringWithFormat:@"%f", coordinate.latitude];
+            self.longitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
+        }
+        [self.activityIndicator stopAnimating];
+    }];
+}
+
 @end
