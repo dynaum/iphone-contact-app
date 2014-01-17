@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self addDefaultContact];
     self.contacts = [self selectContacts];
     
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds ];
@@ -93,6 +94,27 @@
 
     NSArray * contacts = [self.context executeFetchRequest:fetchRequest error:nil];
     return [contacts mutableCopy];
+}
+
+- (void) addDefaultContact
+{
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL insertedData = [userDefaults boolForKey:@"insertedData"];
+    
+    if (!insertedData) {
+        EDENContactModel * contact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.context];
+        
+        contact.name    = @"Dynaum";
+        contact.address = @"Rua Euclides Pacheco, 1035, São Paulo";
+        contact.phone   = @"(11) 971889422";
+        contact.email   = @"elber@dynaum.com";
+        contact.site    = @"dynaum.com";
+        
+        [self saveContext];
+        
+        [userDefaults setBool:YES forKey:@"insertedData"];
+        [userDefaults synchronize];
+    }
 }
 
 #pragma mark - Core Data stack
