@@ -49,6 +49,7 @@ static NSString *const PoolName = @"contactsPool";
 {
     EDENFormContactViewController * form = [[EDENFormContactViewController alloc] init];
     form.delegate = self;
+    form.context  = self.context;
     
     [self.navigationController pushViewController:form animated:YES];
 }
@@ -101,7 +102,11 @@ static NSString *const PoolName = @"contactsPool";
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        EDENContactModel * contact = self.contacts[indexPath.row];
+
         [self.contacts removeObjectAtIndex:indexPath.row];
+        [self.context  deleteObject:contact];
+
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

@@ -10,8 +10,14 @@
 
 @interface EDENAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow       * window;
-@property (strong, atomic)    NSMutableArray * contacts;
-@property (strong, atomic)    NSString       * fileName;
+@property (strong, nonatomic) UIWindow       *window;
+@property (strong, atomic)    NSMutableArray *contacts;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext       *context;
+@property (readonly, strong, nonatomic) NSManagedObjectModel         *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

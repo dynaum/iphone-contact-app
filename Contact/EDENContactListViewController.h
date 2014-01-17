@@ -18,5 +18,6 @@
 
 @property (weak, atomic) NSMutableArray * contacts;
 @property (assign, atomic) NSInteger selectedIndex;
+@property (weak, nonatomic) NSManagedObjectContext *context;
 
 @end

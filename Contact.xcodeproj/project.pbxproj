@@ -25,6 +25,7 @@
 		6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */; };
 		6DB04376188820F800436B9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB04375188820F800436B9B /* CoreLocation.framework */; };
 		6DB043781888600000436B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB043771888600000436B9B /* CoreData.framework */; };
+		6DB0437B18894A2800436B9B /* Model_Contact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DB0437918894A2800436B9B /* Model_Contact.xcdatamodeld */; };
 		6DDF0F0A1886EBBD009DA67D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F091886EBBD009DA67D /* MessageUI.framework */; };
 		6DDF0F0C188706BD009DA67D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF0F0B188706BD009DA67D /* MapKit.framework */; };
 		6DDF0F101887070D009DA67D /* EDENContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDF0F0E1887070D009DA67D /* EDENContactsMapViewController.m */; };
@@ -78,6 +79,7 @@
 		6D4E608B18856BD600132FB0 /* EDENContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDENContactListViewController.m; sourceTree = "<group>"; };
 		6DB04375188820F800436B9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6DB043771888600000436B9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6DB0437A18894A2800436B9B /* Model_Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model_Contact.xcdatamodel; sourceTree = "<group>"; };
 		6DDF0F081886AC4E009DA67D /* EDENFormContactViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDENFormContactViewControllerDelegate.h; sourceTree = "<group>"; };
 		6DDF0F091886EBBD009DA67D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6DDF0F0B188706BD009DA67D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -191,6 +193,7 @@
 				6D4E605C1884534600132FB0 /* InfoPlist.strings */,
 				6D4E605F1884534600132FB0 /* main.m */,
 				6D4E60611884534600132FB0 /* Contact-Prefix.pch */,
+				6DB0437918894A2800436B9B /* Model_Contact.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				6DDF0F101887070D009DA67D /* EDENContactsMapViewController.m in Sources */,
 				6D4E60641884534600132FB0 /* EDENAppDelegate.m in Sources */,
 				6D4E6085188456F500132FB0 /* EDENFormContactViewController.m in Sources */,
+				6DB0437B18894A2800436B9B /* Model_Contact.xcdatamodeld in Sources */,
 				6D4E6089188467FE00132FB0 /* EDENContactModel.m in Sources */,
 				6D4E60601884534600132FB0 /* main.m in Sources */,
 				6D4E608C18856BD600132FB0 /* EDENContactListViewController.m in Sources */,
@@ -591,6 +595,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6DB0437918894A2800436B9B /* Model_Contact.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6DB0437A18894A2800436B9B /* Model_Contact.xcdatamodel */,
+			);
+			currentVersion = 6DB0437A18894A2800436B9B /* Model_Contact.xcdatamodel */;
+			path = Model_Contact.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6D4E60481884534600132FB0 /* Project object */;
 }

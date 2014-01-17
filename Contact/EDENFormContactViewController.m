@@ -81,7 +81,7 @@
 
 - (void) saveContact
 {
-    EDENContactModel * contact = [[EDENContactModel alloc] init];
+    EDENContactModel * contact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.context];
     [self setFormData:contact];
     
     [self.delegate contactAdded:contact];

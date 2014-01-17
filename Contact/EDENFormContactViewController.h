@@ -26,6 +26,7 @@
 
 @property (strong, atomic) EDENContactModel * contact;
 @property (weak, atomic) id <EDENFormContactViewControllerDelegate> delegate;
+@property (weak, nonatomic) NSManagedObjectContext *context;
 
 
 - (id) initWithContact:(EDENContactModel *) contact;

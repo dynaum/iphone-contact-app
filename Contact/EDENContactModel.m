@@ -10,6 +10,8 @@
 
 @implementation EDENContactModel
 
+@dynamic name, email, phone, address, site, picture, latitude, longitude;
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];

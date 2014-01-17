@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface EDENContactModel : NSObject <NSCoding,MKAnnotation>
+@interface EDENContactModel : NSManagedObject <NSCoding,MKAnnotation>
 
 @property (strong, atomic) NSString * name;
 @property (strong, atomic) NSString * email;
